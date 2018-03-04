@@ -1,0 +1,37 @@
+{
+  "name": "passenger-invoice-portal",
+  "version": "1.0.0",
+  "description": "An invoice generating app using Express server for node and Sequelize ORM",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "mysql2": "^1.5.2",
+    "sequelize": "^4.35.0",
+    "sequelize-cli": "^4.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Unionindesign/passenger-invoice-portal.git"
+  },
+  "keywords": [
+    "node.js",
+    "epxress",
+    "server",
+    "mysql",
+    "sequelize",
+    "ORM",
+    "handlebars.js"
+  ],
+  "author": "SM",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Unionindesign/passenger-invoice-portal/issues"
+  },
+  "homepage": "https://github.com/Unionindesign/passenger-invoice-portal#readme"
+}
