@@ -31,17 +31,12 @@ module.exports = function(sequelize, DataTypes) {
     },  
     pax_name: {
         type: DataTypes.STRING,
-        
     },
     payments: {
         type: DataTypes.INTEGER,
     },
     balance: {
         type: DataTypes.INTEGER,
-        allowNull: false,
-        validate: {
-        len: [1]
-        }
     },
     due_date: {
         type: DataTypes.STRING,
@@ -57,6 +52,13 @@ module.exports = function(sequelize, DataTypes) {
         len: [1]
         }
     }, 
+    total_group_credit: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        validate : {
+            len: [1]
+        }
+    },
     hasGroupCredit: {
         type: DataTypes.BOOLEAN,
         allowNull: false,
@@ -80,10 +82,6 @@ module.exports = function(sequelize, DataTypes) {
     },
     group_credit_amt: {
         type: DataTypes.INTEGER,
-        allowNull: false,
-        validate: {
-        len: [1]
-        }
     },
     createdAt: {
         allowNull: false,
@@ -100,7 +98,7 @@ module.exports = function(sequelize, DataTypes) {
   
     Passenger.associate = function(models) {
       // We're saying that a Passenger should belong to a Group
-      // A Post can't be created without an Author due to the foreign key constraint
+      // A Passenger can't be created without a Group due to the foreign key constraint
       Passenger.belongsTo(models.Group, {
         foreignKey: {
           allowNull: false

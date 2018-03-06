@@ -21,8 +21,11 @@ module.exports = function(app) {
         }
     }).then(function(dbGroup) {
         res.json(dbGroup);
+        console.log(dbGRoup);
     });
   });
+
+ 
 
 }
 

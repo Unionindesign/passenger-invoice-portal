@@ -1,6 +1,7 @@
 $(document).ready(function() {
 
     $.get("/api/groups", function(data) {
+        console.log(data);
         for (var i = 0; i < data.length; i++) {
         $("#groupsTable > tbody" +i).append(
             "<tr><td>" + data[i].group_name + "</td><td>" 
