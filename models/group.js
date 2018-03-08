@@ -1,5 +1,8 @@
+// const Passengers = require("./passenger.js");
+
+
 module.exports = function(sequelize, DataTypes) {
-    var Group = sequelize.define("Group", {
+    var Groups = sequelize.define("Groups", {
         group_name: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -37,15 +40,18 @@ module.exports = function(sequelize, DataTypes) {
             allowNull: false,
             type: DataTypes.BOOLEAN,
             defaultValue: true
-        }  
+        },
+        // underscored: true 
     });
   
-    Group.associate = function(models) {
+    Groups.associate = function(models) {
       
-      Group.hasMany(models.Passenger, {
+      Groups.hasMany(models.Passengers, {
+        // underscored: true,
         onDelete: "cascade"
       });
     };
   
-    return Group;
+    return Groups;
   };
+

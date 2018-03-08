@@ -1,5 +1,7 @@
+// const Groups = require("./group.js");
+
 module.exports = function(sequelize, DataTypes) {
-    var Passenger = sequelize.define("Passenger", {
+    var Passengers = sequelize.define("Passengers", {
       
     group_name: {
         type: DataTypes.STRING,
@@ -92,19 +94,25 @@ module.exports = function(sequelize, DataTypes) {
         allowNull: false,
         type: DataTypes.BOOLEAN,
         defaultValue: true
-    }  
+    },
+    // underscored: true  
 
  });
+//  Passengers.belongsTo(Groups, {foreignKey: 'group_name', targetKey: 'group_name'});
+
   
-    Passenger.associate = function(models) {
+    Passengers.associate = function(models) {
       // We're saying that a Passenger should belong to a Group
       // A Passenger can't be created without a Group due to the foreign key constraint
-      Passenger.belongsTo(models.Group, {
-        foreignKey: {
-          allowNull: false
+      Passengers.belongsTo(models.Groups, {
+        foreignKey: { 
+          allowNull: false,
+          
         }
       });
     };
   
-    return Passenger;
+    return Passengers;
   };
+
+

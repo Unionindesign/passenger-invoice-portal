@@ -17,7 +17,7 @@
       "username": "root",
       "password": null,
       "database": "database_production",
-      "host": process.env.JAWSDB_URL,
+      "host": "process.env.JAWSDB_URL",
       "dialect": "mysql"
     }
   }

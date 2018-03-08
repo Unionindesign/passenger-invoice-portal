@@ -22,10 +22,9 @@ app.use(bodyParser.json());
 app.use(express.static("public"));
 
 
-//TODO require routes once built
+// require routes 
 require("./routes/api-routes.js")(app);
 require("./routes/pax-api-routes.js")(app);
-
 require("./routes/html-routes.js")(app);
 
 
