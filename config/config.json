@@ -14,10 +14,7 @@
       "dialect": "mysql"
     },
     "production": {
-      "username": "root",
-      "password": null,
-      "database": "passengerInvoicePortal_db",
-      "host": "process.env.JAWSDB_URL",
+      "use_env_variable": "JAWSDB_URL",
       "dialect": "mysql"
     }
   }
