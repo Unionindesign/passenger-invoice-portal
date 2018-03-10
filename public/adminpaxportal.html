@@ -25,26 +25,89 @@
             <div class="row top-padding">
                 <div class="card col-10 offset-1">
                     <div class="card-header card-header-aqua white-card-title">
-                        View Groups
+                        View Group Passengers
                     </div>
                     <div class="card-body card-rounder">
-                        <h5 class="card-title">Group Name: <span id="group-name"></span></h5>
-                        <h6>Tour name: <span id="tour-name"></span></h6>
-                        <h6>Tour code: <span id="tour-code"></span></h6>
-                        <h6>Departure date: <span id="dep-date"></span></h6>
-                        <h6>Due date: <span id="due-date"></span></h6>
-                        <h6>Total Group Credit: <span id ="totalGC"></span></h6>
-                    </div>
+                        <div class="col6 float-left">
+                            <h5 class="card-title">Group Name: <span id="group-name"></span></h5>
+                            <h6>Tour name: <span id="tour-name"></span></h6>
+                            <h6>Tour code: <span id="tour-code"></span></h6>
+                            <h6>Departure date: <span id="dep-date"></span></h6>
+                            <h6>Due date: <span id="due-date"></span></h6>
+                            <h6>Total Group Credit: <span id ="totalGC"></span></h6>
+                        </div>
+                        <div class="col6 float-right">
+
+                          <!-- Large modal -->
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Preview Group Invoice</button>
+                        </div>
+
+                        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content container-fluid">
+
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" >Your <span id="group-name-modal"></span> Group Invoice - <span id="group-inv-modal"></span></span></h5>
+                                    </div>
+
+                                    <div class="modal-body">
+                                       <div class="row"> 
+                                            <div class="col6 float-left">
+                                                <h6>Tour: <span id="tour-name-modal"></span> (<span id="tour-code-modal"></span>)</h6>
+                                                <h6>Passengers in group: 10</h6> 
+                                            </div>
+                                            <div class="col6 float-right">
+                                                <h6>Departure date: <span id="dep-date-modal"></span></h6>
+                                                <h6>Final Balance Due Date: <span id="due-date-modal"></span></h6>
+                                            </div>
+                                        </div>
+                                        
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Passenger Name</th>
+                                                    <th scope="col">Payments</th>
+                                                    <th scope="col">Balance</th>
+                                                    <th scope="col">Amount of credit</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="passengersTableModal">
+                                                    <!-- Show all Passengers invoice data here -->
+                                            </tbody>
+                                        </table>
+                                        <div class="float-right">
+                                            <h5>Gross Total: $45,500.00</h5>
+                                            <h5>Total Payments: $5,500.00</h5>
+                                            <h5>Gross Balance: $40,00.00</h5>
+                                            <h5 class="font-red">Total Group Credit: - $3,00.00</h5>
+                                            <h5 class="font-green">Net Balance Due: $37,00.00</h5>
+                                        </div>
+
+
+                                    </div>
+                                
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Send as email</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                                                                           
                     <table class="table table-striped" id="groupsTable">
                         <thead>
                             <tr>
+                                <th scope="col">Invoice</th>
                                 <th scope="col">Passenger Name</th>
                                 <th scope="col">Payments</th>
                                 <th scope="col">Balance</th>
                                 <th scope="col">is GL</th>
                                 <th scope="col">has Credit</th>
                                 <th scope="col">Split</th>
-                                <th scope="col">Credit Amt</th>
+                                <th scope="col">Credit</th>
+                                <th scope="col">Select</th>
+
+
                             </tr>
                         </thead>
                         <tbody id="passengersTable">

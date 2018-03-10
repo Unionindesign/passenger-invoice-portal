@@ -27,9 +27,9 @@ module.exports = function(app) {
         where: {
           id: req.params.id
         },
-        include: [db.Group]
-      }).then(function(dbGroup) {
-        res.json(dbGroup);
+        include: [db.Groups]
+      }).then(function(dbPassengers) {
+        res.json(dbPassengers);
       });
     });
   

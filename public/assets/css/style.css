@@ -23,3 +23,10 @@ body {
 .nav-ltblu {
     background-color: #daf0ff; /* Same color as GL portal */ 
 }
+
+.font-red {
+    color: red;
+}
+.font-green {
+    color: green;
+}

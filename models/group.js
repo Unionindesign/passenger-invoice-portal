@@ -3,34 +3,16 @@
 
 module.exports = function(sequelize, DataTypes) {
     var Groups = sequelize.define("Groups", {
-        group_name: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-            len: [1]
-            }
-        },
-        tour_name: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-            len: [1]
-            }
-        },
-        tour_code: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-            len: [1]
-            }
-        },
-        departure_date: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-            len: [1]
-            }
-        },
+        group_name: {type: DataTypes.STRING},
+       
+        tour_name: {type: DataTypes.STRING},
+
+        tour_code: {type: DataTypes.STRING},
+
+        departure_date: {type: DataTypes.STRING},
+
+        pax_in_group: {type: DataTypes.INTEGER},
+        
         createdAt: {
             allowNull: false,
             type: DataTypes.BOOLEAN,
