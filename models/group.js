@@ -1,6 +1,3 @@
-// const Passengers = require("./passenger.js");
-
-
 module.exports = function(sequelize, DataTypes) {
     var Groups = sequelize.define("Groups", {
         group_name: {type: DataTypes.STRING},
